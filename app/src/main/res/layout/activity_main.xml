@@ -1,18 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <Button
+        android:id="@+id/btn_DataBinding01"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="60dp"
+        android:text="绑定1"
+        android:textColor="@android:color/background_dark"
+        android:textSize="20dp" />
 
-</android.support.constraint.ConstraintLayout>
+    <Button
+        android:id="@+id/btn_DataUnBinding01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btn_DataBinding01"
+        android:layout_marginLeft="60dp"
+        android:layout_toRightOf="@+id/btn_DataBinding01"
+        android:text="解绑1"
+        android:textColor="@android:color/background_dark"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/btn_DataBinding02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_DataBinding01"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="60dp"
+        android:text="绑定2"
+        android:textColor="@android:color/background_dark"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/btn_DataUnBinding02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btn_DataBinding02"
+        android:layout_marginLeft="60dp"
+        android:layout_toRightOf="@+id/btn_DataBinding02"
+        android:text="解绑2"
+        android:textColor="@android:color/background_dark"
+        android:textSize="20dp" />
+
+</RelativeLayout>

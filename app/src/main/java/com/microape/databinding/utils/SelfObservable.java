@@ -7,9 +7,8 @@ import android.support.annotation.Nullable;
 /**
  * Author pengle on 2019/7/17 16:56
  * Email  pengle609@163.com
- * 兼容 T 非基本数据类型，
  */
-public class SelfObservable<T> extends ObservableField<T> {
+public class SelfObservable<T extends Comparable> extends ObservableField<T> {
 
     static final long serialVersionUID = 1L;
     private T mValue;
@@ -32,18 +31,13 @@ public class SelfObservable<T> extends ObservableField<T> {
 
     @Override
     public void set(T value) {
-        if (value instanceof Comparable) {
-            // TODO: 2019/7/17 基本数据类型父类
-            if (value != mValue) {
-                mValue = value;
-                notifyChange();
-            }
-        } else {
-            // TODO: 2019/7/17 value 必须实现规范的 toString() 方法
-            if (!value.toString().equals(mValue.toString())) {
-                mValue = value;
-                notifyChange();
-            }
+        if (mValue == null){
+            mValue = value;
+            notifyChange();
+            return;
+        }else if (mValue.compareTo(value) != 0){
+            mValue = value;
+            notifyChange();
         }
     }
 }
