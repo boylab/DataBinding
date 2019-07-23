@@ -8,7 +8,7 @@ import android.support.annotation.Nullable;
  * Author pengle on 2019/7/17 16:56
  * Email  pengle609@163.com
  */
-public class SelfObservable<T extends Comparable> extends ObservableField<T> {
+public class SelfObservable<T extends Comparable<T>> extends ObservableField<T> {
 
     static final long serialVersionUID = 1L;
     private T mValue;
